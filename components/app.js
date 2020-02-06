@@ -1,7 +1,7 @@
 class App {
   constructor() {
-    App.handleGetGradesError.bind(this)
-    App.handleGetGradesSuccess.bind(this);
+    var boundError = this.handleGetGradesError.bind(this);
+    var boundSuccess = this.handleGetGradesSuccess.bind(this);
   }
   handleGetGradesError(error) {
     console.error(error);
