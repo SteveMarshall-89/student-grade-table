@@ -52,7 +52,6 @@ class App {
       success: this.handleCreateGradeSuccess,
       error: this.handleCreateGradesError
     })
-            console.log(name + course + grade)
   }
   handleCreateGradesError(error) {
     console.error(error)
