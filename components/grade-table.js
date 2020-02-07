@@ -12,9 +12,8 @@ class GradeTable {
       $("p").toggleClass()
     }
     for (let i = 0; i < grades.length; i++) {
-      this.renderGradeRow(grade[i], this.deleteGrade())
+      tBody.append(this.renderGradeRow(grades[i], this.deleteGrade))
     }
-
   }
   onDeleteClick(deleteGrade) {
     this.deleteGrade = deleteGrade;
@@ -23,14 +22,13 @@ class GradeTable {
     var tr = $("<tr>")
       .append($("<td>").text(data.name))
       .append($("<td>").text(data.course))
-      .append($("<td>").text(data.grade))
-      .append($("<td>")
-        .append($('<button type="button">')
-        .text("DELETE")
-        .addClass("btn btn-danger")
-        .addEventListener('click', deleteButton() {
-          deleteGrade(data.id)
-        })))
+      .append($("<td>").text(data.grade));
+    var deleteButton = $("<td>")
+      .append($('<button type="button">')
+      .text("DELETE")
+      .addClass("btn btn-danger"));
+    deleteButton.on('click', function() {deleteGrade(data.id)})
+    tr.append(deleteButton)
     return tr;
   }
 }
