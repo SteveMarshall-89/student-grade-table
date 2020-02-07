@@ -24,6 +24,7 @@ class GradeTable {
       .append($("<td>").text(data.course))
       .append($("<td>").text(data.grade));
     var deleteButton = $("<td>")
+      .addClass("text-right")
       .append($('<button type="button">')
       .text("DELETE")
       .addClass("btn btn-danger"));

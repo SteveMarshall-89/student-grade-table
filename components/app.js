@@ -18,11 +18,17 @@ class App {
   handleGetGradesSuccess(grades) {
     this.gradeTable.updateGrades(grades);
     var total = 0;
+    var average = 0;
     for(let i = 0; i < grades.length; i++) {
       total += grades[i]["grade"];
     }
-    var average = Math.trunc(total / grades.length);
-    this.pageHeader.updateAverage(average);
+    if(total){
+      average = Math.trunc(total / grades.length);
+      this.pageHeader.updateAverage(average);
+    } else {
+      this.pageHeader.updateAverage(average);
+    }
+
     //this.getGrades();
   }
   getGrades() {
@@ -64,6 +70,15 @@ class App {
     this.getGrades();
   }
   deleteGrade(id) {
+    $.ajax({
+      method: 'DELETE',
+      url: 'http://sgt.lfzprototypes.com/api/grades/' + id,
+      headers: {
+        "X-Access-Token": "pYDgjVqL"
+      },
+      success: this.handleDeleteGradeSuccess,
+      error: this.handleDeleteGradeError
+    })
     console.log(id);
   }
   handleDeleteGradeError(error) {
