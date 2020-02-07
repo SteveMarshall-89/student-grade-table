@@ -32,4 +32,7 @@ class App {
   start() {
     this.getGrades();
   }
+  createGrade(name, course, grade) {
+    console.log(name + course + grade)
+  }
 }
