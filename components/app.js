@@ -17,6 +17,7 @@ class App {
     }
     var average = (total / grades.length);
     this.pageHeader.updateAverage(average);
+    this.getGrades();
   }
   getGrades() {
     $.ajax({
