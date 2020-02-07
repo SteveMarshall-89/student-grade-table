@@ -7,12 +7,14 @@
   <title>Student Grade Table</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css"
     integrity="sha256-A47OwxL/nAN0ydiDFTSGX7ftbfTJTKgiJ0zqCuTPDh4=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+    integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0=" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
     <div class="container">
       <div class="row justify-content-between">
-        <div class="col-4">
+        <div class="col-8">
           <h1>Student Grade Table</h1>
         </div>
         <div class="col-4">
@@ -20,11 +22,11 @@
         </div>
       </div>
     </div>
-
   </header>
+
   <div class="container">
     <div class="row">
-      <div class="col">
+      <div class="col-8">
         <table class="table table-striped">
           <thead class="thead">
             <tr>
@@ -37,6 +39,41 @@
           </tbody>
         </table>
       </div>
+
+      <div class="col-4">
+        <form>
+          <div class="form-group">
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="student"><i class="fas fa-user"></i></span>
+              </div>
+              <input type="text" name="student" id="student-name" class="form-control" placeholder="Name">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="course"><i class="far fa-list-alt"></i></span>
+              </div>
+              <input type="text" name="course" id="course-name" class="form-control" placeholder="Course">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="grade"><i class="fas fa-graduation-cap"></i></span>
+              </div>
+              <input type="text" name="grade" id="grade-num" class="form-control" placeholder="Grade">
+            </div>
+
+            <div>
+              <button type="submit" class="btn btn-success">Add</button>
+              <button type="reset" class="btn btn-outline-secondary">Cancel</button>
+            </div>
+
+
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 
@@ -45,6 +82,7 @@
   <script src="components/app.js"></script>
   <script src="components/grade-table.js"></script>
   <script src="components/page-header.js"></script>
+  <script src="components/grade-form.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
