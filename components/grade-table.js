@@ -8,9 +8,13 @@ class GradeTable {
   updateGrades(grades) {
     var tBody = $("tbody");
     tBody.empty();
+    if(!grades) {
+      $("p").toggleClass()
+    }
     for (let i = 0; i < grades.length; i++) {
       this.renderGradeRow(grade[i], this.deleteGrade())
     }
+
   }
   onDeleteClick(deleteGrade) {
     this.deleteGrade = deleteGrade;
