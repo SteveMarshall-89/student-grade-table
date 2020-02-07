@@ -7,14 +7,24 @@ class GradeTable {
     var tBody = $("tbody");
     tBody.empty();
     for (let i = 0; i < grades.length; i++) {
-      var tr = $("<tr>")
-        .append($("<td>").text(grades[i]["name"]))
-        .append($("<td>").text(grades[i]["course"]))
-        .append($("<td>").text(grades[i]["grade"]))
-      tBody.append(tr)
+
     }
   }
   onDeleteClick(deleteGrade) {
     this.deleteGrade = deleteGrade;
+  }
+  renderGradeRow(data, deleteGrade) {
+    var tr = $("<tr>")
+      .append($("<td>").text(data.name))
+      .append($("<td>").text(data.course))
+      .append($("<td>").text(data.grade))
+      .append($("<td>")
+        .append($('<button type="button">')
+        .text("DELETE")
+        .addClass("btn btn-danger")
+        .addEventListener('click', deleteButton() {
+          deleteGrade(data.id)
+        })))
+    return tr;
   }
 }
