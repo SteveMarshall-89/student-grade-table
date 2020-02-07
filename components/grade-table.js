@@ -1,6 +1,7 @@
 class GradeTable {
   constructor(tableElement) {
     this.tableElement = tableElement;
+    this.deleteGrade = null;
   }
   updateGrades(grades) {
     var tBody = $("tbody");
@@ -12,5 +13,8 @@ class GradeTable {
         .append($("<td>").text(grades[i]["grade"]))
       tBody.append(tr)
     }
+  }
+  onDeleteClick(deleteGrade) {
+    this.deleteGrade = deleteGrade;
   }
 }
