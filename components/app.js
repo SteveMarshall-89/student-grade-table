@@ -59,4 +59,7 @@ class App {
   handleCreateGradeSuccess() {
     this.getGrades();
   }
+  deleteGrade(id) {
+    console.log(id);
+  }
 }
