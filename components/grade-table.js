@@ -1,6 +1,7 @@
 class GradeTable {
-  constructor(tableElement) {
+  constructor(tableElement, noGradesElement) {
     this.tableElement = tableElement;
+    this.noGradesElement = noGradesElement;
     this.deleteGrade = null;
     this.renderGradeRow = this.renderGradeRow.bind(this);
   }
