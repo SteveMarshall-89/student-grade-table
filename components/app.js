@@ -5,9 +5,7 @@ class App {
     this.gradeTable = gradeTable;
     this.pageHeader = pageHeader;
     this.gradeForm = gradeForm;
-    this.createGrid = this.createGrid.bind(this);
-    this.handleCreateGradeError = this.handleCreateGradeError.bind(this);
-    this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this);
+    this.createGrade = this.createGrade.bind(this);
   }
   handleGetGradesError(error) {
     console.error(error);
@@ -20,7 +18,7 @@ class App {
     }
     var average = (total / grades.length);
     this.pageHeader.updateAverage(average);
-    this.getGrades();
+    //this.getGrades();
   }
   getGrades() {
     $.ajax({
@@ -39,5 +37,11 @@ class App {
   }
   createGrade(name, course, grade) {
     console.log(name + course + grade)
+  }
+  handleCreateGradesError(error) {
+    console.error(error)
+  }
+  handleCreateGradeSuccess() {
+    this.getGrades();
   }
 }
