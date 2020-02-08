@@ -28,8 +28,6 @@ class App {
     } else {
       this.pageHeader.updateAverage(average);
     }
-
-    //this.getGrades();
   }
   getGrades() {
     $.ajax({

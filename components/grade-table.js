@@ -8,7 +8,7 @@ class GradeTable {
   updateGrades(grades) {
     var tBody = $("tbody");
     tBody.empty();
-    if(!grades) {
+    if(grades) {
       $("p").toggleClass()
     }
     for (let i = 0; i < grades.length; i++) {
